@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freelance Hourly Rate Calculator</title>
+  <meta name="description" content="Calculate the hourly rate you need as a freelancer based on your income goal and working hours.">
+</head>
+
+<body>
+  <h1>Freelance Hourly Rate Calculator</h1>
+
+  <label>Desired Annual Income ($):</label><br>
+  <input type="number" id="income"><br><br>
+
+  <label>Work Weeks Per Year:</label><br>
+  <input type="number" id="weeks"><br><br>
+
+  <label>Billable Hours Per Week:</label><br>
+  <input type="number" id="hours"><br><br>
+
+  <button onclick="calculateRate()">Calculate Hourly Rate</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function calculateRate() {
+      var income = document.getElementById("income").value;
+      var weeks = document.getElementById("weeks").value;
+      var hours = document.getElementById("hours").value;
+
+      var rate = income / (weeks * hours);
+      rate = rate.toFixed(2);
+
+      document.getElementById("result").innerHTML =
+        "You need to charge <strong>$" + rate + "</strong> per hour.";
+    }
+  </script>
+</body>
+</html>
