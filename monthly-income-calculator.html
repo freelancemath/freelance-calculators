@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freelance Monthly Income Calculator</title>
+  <meta name="description" content="Calculate your monthly freelance income based on hourly rate and working hours. Free and simple tool.">
+</head>
+
+<body>
+
+<h1>Freelance Monthly Income Calculator</h1>
+
+<p>Use this calculator to estimate how much you can earn per month as a freelancer.</p>
+
+<label>Hourly Rate ($):</label><br>
+<input type="number" id="rate"><br><br>
+
+<label>Hours Worked Per Day:</label><br>
+<input type="number" id="hours"><br><br>
+
+<label>Working Days Per Month:</label><br>
+<input type="number" id="days"><br><br>
+
+<button onclick="calculateIncome()">Calculate Monthly Income</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calculateIncome() {
+  var rate = document.getElementById("rate").value;
+  var hours = document.getElementById("hours").value;
+  var days = document.getElementById("days").value;
+
+  var income = rate * hours * days;
+  income = income.toFixed(2);
+
+  document.getElementById("result").innerHTML =
+    "Your estimated monthly income is <strong>$" + income + "</strong>";
+}
+</script>
+
+</body>
+</html>
